@@ -1,0 +1,39 @@
+1，创建不可变数据
+SImmutable([1, 2, 3])  等同于  Immutable.from([1, 2, 3]);       都是创建一个不可变的数据集合
+
+
+
+3.setIn / set    都可以对数据赋值
+set(key,value)
+
+
+SImmutable.setIn([key,二级key], data)
+
+
+对多级key进行赋值，返回一个新的对象
+
+
+4.flatMap     //对数组进行遍历返回一个新的不可变数组
+
+flatMap(array, function(str,index,arr) {
+  console.log('~',str,index,arr)
+  return [str, str, str];
+});  
+
+// returns Immutable(["here", "here", "here", "we", "we", "we", "go", "go", "go"])
+
+
+5.asMutable    //将一个不可变的数据变成一个可变的数据
+
+var mutableArray = SImmutable.asMutable(array);
+var mutableObj = SImmutable.asMutable(obj);
+
+
+6.isImmutable   //判断这个数据是否可变
+
+
+对象===========
+
+7。merge
+SImmutable.merge(obj, {are: {belong: "to us"}})
+将两个对象合并成一个新的对象并返回
